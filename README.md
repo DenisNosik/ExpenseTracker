@@ -49,7 +49,11 @@ python main.py summary --month 8
 Output example: Total expenses for August: $35
 
 📝 Notes
+
 All expenses are stored in expenses_data.json.
+
 IDs are automatically incremented for new expenses.
+
 Monthly summaries support filtering by month.
+
 Tables are neatly aligned for easy terminal reading.
