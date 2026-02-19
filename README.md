@@ -14,9 +14,10 @@ python3 main.py -h
 ## Usage
 
 All commands are run via Python
+
 1️⃣ Add an expense:
 ```
-python main.py add --description "Lunch" --amount 99\
+python main.py add --description "Lunch" --amount 99
 ```
 --description — description of the expense
 --amount — amount spent (number)
