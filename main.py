@@ -47,20 +47,23 @@ def save_data(data):
 
 
 def add_expense(args):
-    data = load_data()
+    if args.amount > 0:
+        data = load_data()
 
-    new_id = max((item["id"] for item in data), default=0) + 1
+        new_id = max((item["id"] for item in data), default=0) + 1
 
-    new_item = {
-        "id": new_id,
-        "date": datetime.now().strftime("%d-%m-%Y"),
-        "description": args.description,
-        "amount": args.amount
-    }
+        new_item = {
+            "id": new_id,
+            "date": datetime.now().strftime("%d-%m-%Y"),
+            "description": args.description,
+            "amount": args.amount
+        }
 
-    data.append(new_item)
-    save_data(data)
-    print(f"Expense {args.description} added successfully ID: {new_id}")
+        data.append(new_item)
+        save_data(data)
+        print(f"Expense {args.description} added successfully ID: {new_id}")
+    else:
+        print(f"Amount should be greater than 0")
 
 
 def expenses_list(args):
@@ -71,6 +74,17 @@ def expenses_list(args):
 
 def delete_expense(args):
     data = load_data()
+
+    id_found = False
+
+    for item in data:
+        if item["id"] == args.id:
+            id_found = True
+
+    if not id_found:
+        print(f"No expense with ID {args.id} found. Please try again.")
+        return
+
     data = [item for item in data if item["id"] != args.id]
     save_data(data)
     print(f"Expense deleted successfully")
