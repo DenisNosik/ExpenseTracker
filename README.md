@@ -57,3 +57,5 @@ IDs are automatically incremented for new expenses.
 Monthly summaries support filtering by month.
 
 Tables are neatly aligned for easy terminal reading.
+
+https://roadmap.sh/projects/expense-tracker
