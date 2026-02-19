@@ -15,27 +15,35 @@ python3 main.py -h
 
 All commands are run via Python
 1️⃣ Add an expense:
-python main.py add --description "Lunch" --amount 99
+```
+python main.py add --description "Lunch" --amount 99\
+```
 --description — description of the expense
 --amount — amount spent (number)
 The date is automatically set to today.
 
 2️⃣ List all expenses:
+```
 python main.py list
+```
 Displays a table with ID, Date, Description, and Amount
 
 3️⃣ Delete an expense:
+```
 python main.py delete --id 2
+```
 --id — ID of the expense to delete
 After deletion, a confirmation is printed: Expense 'Dinner' deleted successfully
 
 4️⃣ Summary of expenses:
 Total expenses:
+```
 python main.py summary
-
+```
 Total for a specific month:
+```
 python main.py summary --month 8
-
+```
 --month — number of the month (1-12)
 Output example: Total expenses for August: $35
 
